@@ -60,3 +60,84 @@ const subscription = dataSource
   // log: 2, 3, 4, 5, 6
   .subscribe((value) => console.log(value));
 ```
+
+## Pipe
+
+The pipe function is the assembly line from your observable data source through your operators. Just like raw material in a factory goes through a series of stops before it becomes a finished product, source data can pass through a pipe-line of operators where you can manipulate, filter, and transform the data to fit your use case
+
+```ts
+// observable of values from a text box, pipe chains operators together
+inputValue
+  .pipe(
+    // wait for a 200ms pause
+    debounceTime(200),
+    // if the value is the same, ignore
+    distinctUntilChanged(),
+    // if an updated value comes through while request is still active cancel previous request and 'switch' to new observable
+    switchMap((searchTerm) => typeaheadApi.search(searchTerm))
+  )
+  // create a subscription
+  .subscribe((results) => {
+    // update the dom
+  });
+```
+
+### operators categories
+
+There are :
+
+- creator
+  allow the creation of an observable from nearly anything
+
+```ts
+fromEvent(scrollContainerElement, 'scroll')
+  .pipe(
+    // we will discuss cleanup strategies like this in future article
+    takeUntil(userLeavesArticle)
+  )
+  .subscribe((event) => {
+    // calculate and update DOM
+  });
+```
+
+- combination
+  The combination operators allow the joining of information from multiple observables
+
+```ts
+// give me the last emitted value from each source, whenever either source emits
+combineLatest(sourceOne, sourceTwo).subscribe(
+  ([latestValueFromSourceOne, latestValueFromSourceTwo]) => {
+    // perform calculation
+  }
+);
+```
+
+- error handling
+  The error handling operators provide effective ways to gracefully handle errors and perform retries, should they occur.
+
+```ts
+source
+  .pipe(
+    mergeMap((value) => {
+      return makeRequest(value).pipe(
+        catchError(handleErrorByReturningObservable)
+      );
+    })
+  )
+  .subscribe((value) => {
+    // take action
+  });
+```
+
+- filtering operators
+  operators provide techniques for accepting - or declining - values from an observable source and dealing with backpressure, or the build up of values within a stream.
+
+```ts
+source.pipe(take(5)).subscribe((value) => {
+  // take action
+});
+```
+
+### ressources
+
+https://www.learnrxjs.io/learn-rxjs/recipes
