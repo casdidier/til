@@ -141,3 +141,5 @@ source.pipe(take(5)).subscribe((value) => {
 ### ressources
 
 https://www.learnrxjs.io/learn-rxjs/recipes
+examples reviewed:
+https://www.learnrxjs.io/learn-rxjs/recipes/type-ahead
