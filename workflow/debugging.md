@@ -1,5 +1,6 @@
-Here is some technique to debug
+# Here is some technique to debug
 
+## Manifesto
 1. Inspect, don’t squash
 When you run into a bug, the natural instinct is to try to fix it as fast as possible. And of course, sometimes that’s what you have to do – if the bug is causing a huge production incident, you have to mitigate it quickly before diving into figuring out the root cause.
 
@@ -48,5 +49,8 @@ I really think of debugging as an investment in my future knowledge – if somet
 Of course, not all bugs are adventures (that off-by-one error I was debugging today certainly did not feel like a fun adventure). But I think it’s important to (as much as you can) reflect on your bugs and see what you can learn from them.
 
 https://jvns.ca/blog/2022/12/08/a-debugging-manifesto/
+
+## more applicable rules
+https://jvns.ca/blog/2019/06/23/a-few-debugging-resources/
 
 ![zine debugging](debugging-zine.png)
