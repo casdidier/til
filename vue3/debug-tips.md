@@ -2,6 +2,9 @@
 
 ## how to know how many times your component got rendered
 
+use onRenderTracked
+
+```vue
 <template>
   <form>
     <TermsOfService 
@@ -27,3 +30,4 @@ onRenderTracked((debug) => {
   console.log(`Form.vue render tracked. \tCount: ${count} key: ${debug.key}.`)
 })
 </script>
+```
