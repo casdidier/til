@@ -20,3 +20,23 @@ Here are some examples of different origins:
 As long as the scheme, host, and port match, they are the same origin. The path
 (everything following the origin) doesn't factor into the question of same
 origin.
+
+Q:
+if the JS code is on the webpage http://website.com/apple, is a request to http://website.com/banana a same-origin request?
+
+yes!
+if the domain/subdomain, port, and protocol (http / https) are the same, it's the same origin!
+
+Q:how do you allow a cross-origin GET request to api.yourstore.com from the origin yourstore.com?
+
+set the Access-Control-Allow-Origin: yourstore.com header on the HTTP response!
+for a basic cross-origin GET request, the browser actually will send the GET request, but it won't allow the Javascript to read the response unless the response has the right header.
+
+It's usually better to allow a allowlist of specific origins and not \*.
+
+Q:how do you allow a POST request of some JSON to api.yourstore.com from a different origin?
+
+respond to the preflight OPTIONS request with the right headers!
+If you're making a cross-origin POST request with some JSON, the browser won't even send the request by default. Instead, it'll send a "preflight" OPTIONS request and check the response headers.
+
+https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy
