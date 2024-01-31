@@ -40,3 +40,4 @@ respond to the preflight OPTIONS request with the right headers!
 If you're making a cross-origin POST request with some JSON, the browser won't even send the request by default. Instead, it'll send a "preflight" OPTIONS request and check the response headers.
 
 https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy
+https://code.google.com/archive/p/browsersec/wikis/Part2.wiki#Same-origin_policy
