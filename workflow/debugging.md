@@ -52,5 +52,6 @@ https://jvns.ca/blog/2022/12/08/a-debugging-manifesto/
 
 ## more applicable rules
 https://jvns.ca/blog/2019/06/23/a-few-debugging-resources/
+https://blog.regehr.org/archives/199
 
 ![zine debugging](debugging-zine.png)
