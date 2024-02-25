@@ -41,3 +41,4 @@ If you're making a cross-origin POST request with some JSON, the browser won't e
 
 https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy
 https://code.google.com/archive/p/browsersec/wikis/Part2.wiki#Same-origin_policy
+https://blog.meain.io/2024/just-enough-cors/
