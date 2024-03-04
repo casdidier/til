@@ -27,3 +27,6 @@
 -> Only assert on the dimensions of one thing
 
 ![alt text](image-1.png)
+
+https://youtu.be/Jv2uxzhPFl4?si=NYHp07QnLwmtipLp
+https://www.youtube.com/watch?v=D7LKslgwxmQ
